@@ -11,7 +11,7 @@ export default async function handler(req, res) {
     const { prompt } = req.body;
 
     const response = await fetch(
-      "https://api-inference.huggingface.co/models/Wan-AI/Wan2.1-T2V-1.3B",
+      "https://api-inference.huggingface.co/models/damo-vilab/text-to-video-ms-1.7b",
       {
         method: "POST",
         headers: {
@@ -35,7 +35,7 @@ export default async function handler(req, res) {
 
     }
 
-    const video =
+    const blob =
       await response.arrayBuffer();
 
     res.setHeader(
@@ -44,7 +44,7 @@ export default async function handler(req, res) {
     );
 
     res.send(
-      Buffer.from(video)
+      Buffer.from(blob)
     );
 
   } catch (err) {
