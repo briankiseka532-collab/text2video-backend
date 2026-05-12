@@ -15,7 +15,7 @@ export default async function handler(req, res) {
       {
         method: "POST",
         headers: {
-          Authorization: "Bearer "hf_xxxxxxxxxxxxxxxxx",
+          Authorization: "Bearer YOUR_HF_TOKEN",
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
@@ -26,11 +26,11 @@ export default async function handler(req, res) {
 
     if (!response.ok) {
 
-      const error =
+      const errorText =
         await response.text();
 
       return res.status(500).json({
-        error
+        error:errorText
       });
 
     }
@@ -49,7 +49,7 @@ export default async function handler(req, res) {
 
   } catch (err) {
 
-    res.status(500).json({
+    return res.status(500).json({
       error: err.message
     });
 
