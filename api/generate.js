@@ -30,7 +30,7 @@ export default async function handler(req, res) {
     const { prompt } = req.body;
 
     const response = await fetch(
-      "https://api-inference.huggingface.co/models/damo-vilab/text-to-video-ms-1.7b",
+      "https://router.huggingface.co/hf-inference/models/damo-vilab/text-to-video-ms-1.7b",
       {
         method: "POST",
         headers: {
