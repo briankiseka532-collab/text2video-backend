@@ -34,7 +34,7 @@ export default async function handler(req, res) {
       {
         method: "POST",
         headers: {
-          Authorization: "Bearer hf_xxxxxxxxxxxxxxxxx",
+          Authorization: "Bearer hf_...pTsl",
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
